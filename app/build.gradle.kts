@@ -4,15 +4,16 @@ plugins {
 }
 
 android {
-  namespace = "com.example.weather"
+  namespace = "com.example.weather_app"
   compileSdk = 36 // Измените на актуальную версию
 
   buildFeatures {
     viewBinding = true
+    buildConfig = true
   }
 
   defaultConfig {
-    applicationId = "com.example.weather"
+    applicationId = "com.example.weather_app"
     minSdk = 24
     targetSdk = 34 // Измените на актуальную версию
     versionCode = 1
