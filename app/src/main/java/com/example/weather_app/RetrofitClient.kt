@@ -4,8 +4,10 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
+
   private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
 
+  // Настройка Retrofit
   private val retrofit: Retrofit by lazy {
     Retrofit.Builder()
       .baseUrl(BASE_URL)
@@ -13,6 +15,7 @@ object RetrofitClient {
       .build()
   }
 
+  // Экземпляр API-сервиса
   val weatherApi: WeatherApi by lazy {
     retrofit.create(WeatherApi::class.java)
   }

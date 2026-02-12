@@ -2,6 +2,7 @@ package com.example.weather_app
 
 import com.google.gson.annotations.SerializedName
 
+//Главная модель ответа от OpenWeatherMap API (текущая погода)
 data class WeatherData(
   @SerializedName("name") val cityName: String,
   @SerializedName("main") val main: Main,
@@ -11,6 +12,7 @@ data class WeatherData(
 )
 
 data class Main(
+  //Текущая температура и ощущаемая
   @SerializedName("temp") val temp: Double,
   @SerializedName("feels_like") val feelsLike: Double,
   @SerializedName("pressure") val pressure: Int,
@@ -20,6 +22,7 @@ data class Main(
 )
 
 data class Weather(
+  //Идентификатор погодного условия и иконка
   @SerializedName("id") val id: Int,
   @SerializedName("main") val main: String,
   @SerializedName("description") val description: String,
@@ -27,11 +30,13 @@ data class Weather(
 )
 
 data class Wind(
+  //Скорость и направление ветра
   @SerializedName("speed") val speed: Double,
   @SerializedName("deg") val deg: Int
 )
 
 data class Sys(
+  //Страна, время восхода и заката солнца
   @SerializedName("country") val country: String,
   @SerializedName("sunrise") val sunrise: Long,
   @SerializedName("sunset") val sunset: Long
